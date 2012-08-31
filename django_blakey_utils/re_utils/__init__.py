@@ -1,5 +1,3 @@
-__author__ = 'msakharova'
-
 def get_matched_string(match):
     """
     :return: string portion which matched specified match (not the initial search string which is represented by match.string)
