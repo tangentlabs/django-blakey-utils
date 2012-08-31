@@ -1,31 +1,34 @@
-import os
-from setuptools import setup
-from utils import __version__, __author__
+#!/usr/bin/env python
+"""
+Installation script:
+
+To release a new version to PyPi:
+- Ensure the version is correctly set in django_blakey_utils.__init__.py
+- Run: python setup.py sdist upload
+"""
+
+from setuptools import setup, find_packages
+
+from django_blakey_utils import get_version
 
 setup(name='django-blakey-utils',
-    version=__version__,
+    version=get_version().replace(' ', '-'),
     url='https://github.com/tangentlabs/django-blakey-utils',
-    author=__author__,
+    author="Tangent Labs",
     author_email="mariia.sakharova@tangentlabs.co.uk",
-    description="Blakey utilities",
-    long_description = file(
-        os.path.join(
-            os.path.dirname(__file__),
-            '../README.rst'
-        )
-    ).read(),
+    description="Common utilities for Blakey project",
+    long_description=open('README.md').read(),
+    keywords="Utilities, Blakey",
     license='BSD',
     platforms=['linux'],
-    packages=['utils', 'utils.re', 'utils.tests'],
-    install_requires=
-        file(os.path.join(
-            os.path.dirname(__file__),
-            'deploy/requirements.txt'
-        )).read(),
-    classifiers = [
-        'Development Status :: 1 - Planning',
-        'Operating System :: POSIX :: Linux',
-        'Programming Language :: Python',
-        ],
-    zip_safe = False,
+    packages=find_packages(exclude=["*.tests"]),
+    install_requires=[
+        'Django==1.4'
+    ],
+    # See http://pypi.python.org/pypi?%3Aaction=list_classifiers
+    classifiers=['Development Status :: 1 - Planning',
+                 'Intended Audience :: Developers',
+                 'License :: OSI Approved :: BSD License',
+                 'Operating System :: Unix',
+                 'Programming Language :: Python']
 )
