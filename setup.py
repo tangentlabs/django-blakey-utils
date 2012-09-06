@@ -23,7 +23,7 @@ setup(name='django-blakey-utils',
     platforms=['linux'],
     packages=find_packages(exclude=["*.tests"]),
     install_requires=[
-        'Django==1.4'
+        'Django==1.4.1'
     ],
     # See http://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=['Development Status :: 1 - Planning',
