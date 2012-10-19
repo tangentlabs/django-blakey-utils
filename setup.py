@@ -24,7 +24,8 @@ setup(name='django-blakey-utils',
     packages=find_packages(exclude=["*.tests"]),
     install_requires=[
         'Django==1.4.1',
-        'django-tastypie==0.9.11'
+        'django-tastypie==0.9.11',
+        'simplejson>=2.2.1'
     ],
     # See http://pypi.python.org/pypi?%3Aaction=list_classifiers
     classifiers=['Development Status :: 1 - Planning',
