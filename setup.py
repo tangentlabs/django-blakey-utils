@@ -23,7 +23,7 @@ setup(name='django-blakey-utils',
     platforms=['linux'],
     packages=find_packages(exclude=["*.tests"]),
     install_requires=[
-        'Django==1.4.1',
+        'Django==1.11.23',
         'django-tastypie==0.9.11',
         'simplejson>=2.2.1'
     ],
